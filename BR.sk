@@ -1,0 +1,114 @@
+
+
+on load:
+	delete {number}
+
+
+
+
+command /Blockremove <number>:
+	permission: Sk.Admin
+	trigger:
+		Execute console command "/removeblocks1 %player% %arg-2%"
+		Execute console command "/removeblocks2 %player% %arg-2%"
+		Execute console command "/removeblocks3 %player% %arg-2%"
+		Execute console command "/removeblocks4 %player% %arg-2%"
+		Execute console command "/removeblocks5 %player% %arg-2%"
+		loop blocks in radius arg-1 around player:
+			loop-block is not air
+			add loop-block to {_blocks::*}
+			wait 1 tick
+			while size of {_blocks::*} > 0:
+				#wait 1 ticks
+				set {_block} to random element out of {_blocks::*}
+				set block at {_block} to air 
+				#teleport player to {_block}
+				add 1 to {number} 
+				#broadcast "%{number}%"
+				remove {_block} from {_blocks::*}
+				
+
+		broadcast "&4Es wurden %{number}% blöcke entfernt" 
+		delete {number}
+
+
+command /removeblocks1 <player> <number>:
+	permission: Sk.Admin
+	trigger:
+		loop blocks in radius arg-2 around arg-1:
+			loop-block is not air
+			add loop-block to {_blocks::*}
+			wait 1 tick
+			while size of {_blocks::*} > 0:
+				#wait 1 ticks
+				set {_block} to random element out of {_blocks::*}
+				#broadcast "%{_block}%"
+				set block at {_block} to air
+				#add 1 to {number}  
+				remove {_block} from {_blocks::*}
+
+
+
+command /removeblocks2 <player> <number>:
+	permission: Sk.Admin
+	trigger:
+		loop blocks in radius arg-2 around arg-1:
+			loop-block is not air
+			add loop-block to {_blocks::*}
+			wait 1 tick
+			while size of {_blocks::*} > 0:
+				#wait 1 ticks
+				set {_block} to random element out of {_blocks::*}
+				#broadcast "%{_block}%"
+				set block at {_block} to air
+				#add 1 to {number}  
+				remove {_block} from {_blocks::*}
+
+
+command /removeblocks3 <player> <number>:
+	permission: Sk.Admin
+	trigger:
+		loop blocks in radius arg-2 around arg-1:
+			loop-block is not air
+			add loop-block to {_blocks::*}
+			wait 1 tick
+			while size of {_blocks::*} > 0:
+				#wait 1 ticks
+				set {_block} to random element out of {_blocks::*}
+				#broadcast "%{_block}%"
+				set block at {_block} to air
+				#add 1 to {number}  
+				remove {_block} from {_blocks::*}
+
+
+command /removeblocks4 <player> <number>:
+	permission: Sk.Admin
+	trigger:
+		loop blocks in radius arg-2 around arg-1:
+			loop-block is not air
+			add loop-block to {_blocks::*}
+			wait 1 tick
+			while size of {_blocks::*} > 0:
+				#wait 1 ticks
+				set {_block} to random element out of {_blocks::*}
+				#broadcast "%{_block}%"
+				set block at {_block} to air
+				#add 1 to {number}  
+				remove {_block} from {_blocks::*}
+
+
+command /removeblocks5 <player> <number>:
+	permission: Sk.Admin
+	trigger:
+		loop blocks in radius arg-2 around arg-1:
+			loop-block is not air
+			add loop-block to {_blocks::*}
+			wait 1 tick
+			while size of {_blocks::*} > 0:
+				#wait 1 ticks
+				set {_block} to random element out of {_blocks::*}
+				#broadcast "%{_block}%"
+				set block at {_block} to air
+				#add 1 to {number}  
+				remove {_block} from {_blocks::*}
+
